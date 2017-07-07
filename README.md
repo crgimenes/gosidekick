@@ -1,0 +1,2 @@
+# gosidekick
+Go Sidekick
