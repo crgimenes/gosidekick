@@ -1,3 +1,3 @@
 # Go Sidekick
 
-![Go Sidekick](gosidekick.png)
+![Go Sidekick](gosidekickmini.png)
