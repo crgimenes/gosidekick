@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"io/ioutil"
 	"net/http"
+
+	"github.com/crgimenes/gosidekick/af/mdtojson"
 )
 
 func main() {
@@ -15,7 +16,8 @@ func main() {
 	}
 	defer r.Body.Close()
 
-	b, err := ioutil.ReadAll(r.Body)
+	var b []byte
+	b, err = mdtojson.Parse(r.Body)
 	if err != nil {
 		fmt.Println(err)
 		return
