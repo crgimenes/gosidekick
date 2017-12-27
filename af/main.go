@@ -9,7 +9,6 @@ import (
 
 func main() {
 	url := "https://raw.githubusercontent.com/avelino/awesome-go/master/README.md"
-	//url := "https://raw.githubusercontent.com/crgimenes/goconfig/master/README.md"
 
 	r, err := http.Get(url)
 	if err != nil {

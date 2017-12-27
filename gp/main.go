@@ -31,12 +31,28 @@ func folderExists(path string) (fs bool) {
 	return
 }
 
-func gitExec(path string) (err error) {
-	cmd := exec.Command("git", "pull")
+func execHelper(path, name string, arg ...string) (err error) {
+	cmd := exec.Command(name, arg...)
 	cmd.Dir = path
 	cmd.Stdout = os.Stdout
 	cmd.Stderr = os.Stderr
 	err = cmd.Run()
+	return
+}
+
+func gitExec(path string) (err error) {
+	err = execHelper(path, "git", "stash")
+	if err != nil {
+		return
+	}
+	err = execHelper(path, "git", "checkout", "master")
+	if err != nil {
+		return
+	}
+	err = execHelper(path, "git", "pull")
+	if err != nil {
+		return
+	}
 	return
 }
 
