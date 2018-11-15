@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"net/http"
 
-	"github.com/crgimenes/gosidekick/af/mdtojson"
+	"github.com/gosidekick/gosidekick/af/mdtojson"
 )
 
 func main() {
